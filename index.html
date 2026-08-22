@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forkestra: a GitHub year, played back</title>
+<meta name="description" content="Paste a GitHub profile and hear that year of contributions as music." />
+<meta property="og:title" content="Forkestra" />
+<meta property="og:description" content="Paste a GitHub profile and hear that year of contributions as music." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🎼</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="wrap">
+  <header class="head">
+    <h1>Forkestra</h1>
+    <p class="tag">Paste a GitHub profile and hear that year play.</p>
+  </header>
+
+  <form id="form" class="search" autocomplete="off">
+    <input id="user" type="text" placeholder="github.com/pragyaangaur  ·  or just a username" spellcheck="false" aria-label="GitHub username or profile URL" />
+    <button id="go" type="submit">Play</button>
+  </form>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section id="stage" class="stage" hidden>
+    <div class="profile">
+      <img id="avatar" class="avatar" alt="" width="48" height="48" />
+      <div class="who">
+        <a id="handle" class="handle" target="_blank" rel="noopener"></a>
+        <span id="summary" class="summary"></span>
+      </div>
+      <button id="share" class="ghost" type="button" title="Copy a link to this tune">Copy link</button>
+    </div>
+
+    <canvas id="chart" class="chart" aria-label="Contribution graph"></canvas>
+
+    <div class="transport">
+      <button id="play" class="play" type="button" aria-label="Play">
+        <svg class="i-play" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <div class="seek">
+        <div id="bar" class="bar"><div id="fill" class="fill"></div></div>
+        <div class="times"><span id="date">Ready</span><span id="clock">0:00 / 0:00</span></div>
+      </div>
+    </div>
+
+    <div class="knobs">
+      <label>Mood
+        <select id="mood">
+          <option value="dawn">Dawn (bright and open)</option>
+          <option value="dusk" selected>Dusk (warm minor)</option>
+          <option value="neon">Neon (synthwave)</option>
+          <option value="glass">Glass (ambient bells)</option>
+        </select>
+      </label>
+      <label>Tempo <span id="bpmv" class="val">116</span>
+        <input id="bpm" type="range" min="70" max="180" step="2" value="116" />
+      </label>
+      <label>Volume <span id="volv" class="val">80</span>
+        <input id="vol" type="range" min="0" max="100" step="1" value="80" />
+      </label>
+      <label class="check"><input id="drums" type="checkbox" checked /> Drums</label>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How it plays</h2>
+    <ul>
+      <li>Every day of the last year becomes one note, read left to right the way you read the graph itself.</li>
+      <li>The more commits a day holds, the higher and louder its note rings. A day with nothing on it leaves a gap in the melody.</li>
+      <li>Each week picks the bass note underneath, and the chord changes every four weeks.</li>
+      <li>Streaks bring in the drums, so a run of steady days fills out into a full beat.</li>
+      <li>Click anywhere on the graph to jump to that day. Space bar plays and pauses.</li>
+    </ul>
+    <p class="fine">Only public contribution data is used. Nothing is stored and no sign in is needed.</p>
+  </section>
+</main>
+<script src="audio.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
