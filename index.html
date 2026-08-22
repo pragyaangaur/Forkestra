@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Forkestra: a GitHub year, played back</title>
-<meta name="description" content="Paste a GitHub profile and hear that year of contributions as music." />
+<meta name="description" content="Paste a GitHub profile and hear that year of contributions played by a small orchestra." />
 <meta property="og:title" content="Forkestra" />
-<meta property="og:description" content="Paste a GitHub profile and hear that year of contributions as music." />
+<meta property="og:description" content="Paste a GitHub profile and hear that year of contributions played by a small orchestra." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🎼</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
 <main class="wrap">
   <header class="head">
     <h1>Forkestra</h1>
-    <p class="tag">Paste a GitHub profile and hear that year play.</p>
+    <p class="tag">Paste a GitHub profile and hear that year played by an orchestra.</p>
   </header>
 
   <form id="form" class="search" autocomplete="off">
@@ -51,12 +51,12 @@
     </div>
 
     <div class="knobs">
-      <label>Mood
+      <label>Ensemble
         <select id="mood">
-          <option value="dawn">Dawn (bright and open)</option>
-          <option value="dusk" selected>Dusk (warm minor)</option>
-          <option value="neon">Neon (synthwave)</option>
-          <option value="glass">Glass (ambient bells)</option>
+          <option value="chamber" selected>Flute and strings</option>
+          <option value="strings">Harp and strings</option>
+          <option value="keys">Piano and bells</option>
+          <option value="brass">Brass and timpani</option>
         </select>
       </label>
       <label>Tempo <span id="bpmv" class="val">116</span>
@@ -65,7 +65,7 @@
       <label>Volume <span id="volv" class="val">80</span>
         <input id="vol" type="range" min="0" max="100" step="1" value="80" />
       </label>
-      <label class="check"><input id="drums" type="checkbox" checked /> Drums</label>
+      <label class="check"><input id="drums" type="checkbox" checked /> Percussion</label>
     </div>
   </section>
 
@@ -73,9 +73,10 @@
     <h2>How it plays</h2>
     <ul>
       <li>Every day of the last year becomes one note, read left to right the way you read the graph itself.</li>
-      <li>The more commits a day holds, the higher and louder its note rings. A day with nothing on it leaves a gap in the melody.</li>
-      <li>Each week picks the bass note underneath, and the chord changes every four weeks.</li>
-      <li>Streaks bring in the drums, so a run of steady days fills out into a full beat.</li>
+      <li>The more commits a day holds, the higher and louder it rings. Your biggest days get answered by a second instrument.</li>
+      <li>Each week is carried by the cello underneath, and the whole chord turns over every four weeks.</li>
+      <li>Streaks call in the percussion, starting with the timpani and building through side drum and tambourine.</li>
+      <li>A light year opens out into something slower and more exposed, with the harp filling the space between your days and the whole piece lifted to carry.</li>
       <li>Click anywhere on the graph to jump to that day. Space bar plays and pauses.</li>
     </ul>
     <p class="fine">Only public contribution data is used. Nothing is stored and no sign in is needed.</p>

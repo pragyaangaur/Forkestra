@@ -188,7 +188,10 @@
     if (idx >= 0 && idx < days.length) { synth.seek(idx / days.length); tick(synth.step); }
   });
 
-  moodSel.addEventListener('change', function () { synth.mood = moodSel.value; });
+  moodSel.addEventListener('change', function () {
+    synth.mood = moodSel.value;
+    setTimeout(function () { synth.warm(); }, 0);   // build that ensemble before it is needed
+  });
   bpmIn.addEventListener('input', function () {
     synth.bpm = +bpmIn.value; bpmv.textContent = bpmIn.value; tick(synth.step);
   });
@@ -246,6 +249,7 @@
 
       stage.hidden = false;
       say('');
+      setTimeout(function () { synth.warm(); }, 0);   // render the instruments while they read
       tick(0);
       synth.step = 0;
 
