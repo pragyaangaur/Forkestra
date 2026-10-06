@@ -1,2 +1,5 @@
 # Local editor and tooling config
 .claude/
+
+# Agent notes, kept local
+AGENTS.md
