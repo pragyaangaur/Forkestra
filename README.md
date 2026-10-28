@@ -5,7 +5,7 @@ A year of GitHub contributions, played back by a small orchestra.
 Paste any GitHub profile link and the last 53 weeks of that contribution graph turn into a short
 piece of music, about a minute and a half long. Nothing to install, and no sign in.
 
-**[Open Forkestra](https://pragyaangaur.github.io/Forkestra/)**
+**[Open Forkestra](https://pragyaangaur.dev/Forkestra/)**
 
 ## How the graph becomes music
 
@@ -41,7 +41,7 @@ year. A hundred committed days and a thousand both come out sounding like someth
 Every lookup writes the username into the URL:
 
 ```
-https://pragyaangaur.github.io/Forkestra/?u=pragyaangaur
+https://pragyaangaur.dev/Forkestra/?u=pragyaangaur
 ```
 
 Hit **Copy link** and send it to somebody. They land on the same graph with a play button waiting
